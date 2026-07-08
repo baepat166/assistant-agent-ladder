@@ -12,6 +12,10 @@ Not every task needs a genius model. A quick lookup or a short rewrite is a wast
 
 The result is the **best cost-per-task** you can get without hand-picking a model every single time.
 
+## Bonus: the assistant never blocks
+
+Because the model you're chatting with only **routes and relays** — it never sits down to grind a task itself — it stays free to keep talking to you. You can fire off request after request; each one is handed to a worker and **queued**, while the assistant keeps receiving and answering you as fast as possible. Its whole job is fast communication in and out, not heavy lifting. No more "the bot is stuck working, come back in 5 minutes."
+
 ## How you use it
 
 Load the skill, then tell the assistant **how your models rank from low to high**. That ordering is the whole configuration. For example:
