@@ -35,6 +35,18 @@ Load the skill, then tell the assistant **how your models rank from low to high*
 
 From then on the assistant self-routes: it classifies each task, picks the lowest viable rung, delegates, and climbs a rung only if the current one can't deliver.
 
+## Parallel workers, sized to your machine
+
+The ladder isn't just top-to-bottom — it also goes **wide**. When a job splits into independent pieces, the orchestrator can fan them out to several workers **at the same time** so the whole thing finishes faster.
+
+How many run in parallel is **calculated from your hardware**, so you never overload the machine:
+
+- **Local rungs** are CPU/GPU-bound → run them **one (or few) at a time**, sized to your cores and RAM.
+- **Cloud rungs** don't touch your machine → run **several in parallel**, up to a concurrency cap you set.
+- Each parallel job gets its **own isolated session** so they don't collide.
+
+So the skill does two things at once: it picks the **right quality of model for each task** (up the ladder), and it decides **how many workers can safely run together** (across the ladder) based on what your computer can handle.
+
 ## The 5-rung ladder (example ordering)
 
 Low = cheap & less capable. High = expensive & most capable. Start low, climb on failure.
