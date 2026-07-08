@@ -4,6 +4,12 @@
 
 Not every task needs a genius model. A quick lookup or a short rewrite is a waste of a frontier model's tokens. This skill lays your models out as a ladder and tells the assistant one rule: **start at the lowest rung that can plausibly handle the task, and only climb when a rung fails.**
 
+## Why this exists
+
+Ever sent your assistant a task, and then — while it's already head-down doing the work — remembered one more thing you wanted to add or change? Normally you're stuck: the model is busy grinding, so you have to `/stop` it, lose the progress, and start over just to tweak the request.
+
+This skill fixes that by making the model you chat with a **pure receiver** — it takes your messages and routes the work to a worker, but never does the heavy lifting itself. So the conversation stays fluid: you can add, correct, or redirect at any time, and it just updates the queue. **No `/stop`, no interrupting a running job, no losing progress.**
+
 ## The point: token efficiency
 
 - Cheap/small models handle the easy 80% of work → you burn almost no expensive tokens.
